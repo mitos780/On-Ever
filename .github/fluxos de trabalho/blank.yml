@@ -1,0 +1,20 @@
+Begin LoginProcedure()
+     accessflag = FALSE
+     loopcount = 0
+     Output “Enter login and password”
+     Input enteredlogin
+     Input enteredpassword
+     Do While loopcount<3 or accessflag=FALSE
+ 	If enteredlogin = storedlogin and enteredpassword = storedpassword
+	      accessflag = TRUE
+	Else 
+	      Output “Login or password is incorrect – please try again”
+	      loopcount++
+	End if
+     End while
+     If accessflag = TRUE
+	Output welcome message
+	access system
+     Else
+	Output “3 failed login attempts – system locked”
+     End if
